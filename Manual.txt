@@ -1,0 +1,42 @@
+v[_name_] - variable
+n[№] - number
+r[№,№] - random number
+t[_string_] - text
+c[_name_] - board cell
+e[_name_] - erase cell
+i[_name_] - image
+d[№:№:№:№] - database line
+<L> - database length
+<X> - cursor position x
+<Y> - cursor position y
+<Q> - quit
+w[№] - wait [milliseconds]
+{___} - commentary
+(___) - expression
+:: - assignment
++ - addition
++: - assigning addition
+- - subtraction
+-: - assigning subtraction
+* - multiplication
+*: - assigning multiplication
+/ - division
+/: - assigning division
+^ - power
+^: - assigning power
+% - modulus
+%: - assigning modulus
+~ - not
+& - and
+| - or
+= - equal
+< - less
+> - greater
+~= - not equal
+<= - less or equal
+>= - greater or equal
+? ___: ___; ! ___. - if else
+@ ___: ___. - while end
+$ - continue
+# - break
+\ - line break
