@@ -1,0 +1,21 @@
+CRIXUS:
+ - Database:
+    - database1.txt 
+    - database2.txt
+    - ...
+ - Games:
+    - Games.txt
+    - game1.txt
+    - game2.txt
+    - ...
+ - Images:
+    - image1.txt
+    - image2.txt
+    - ...
+ - Reports:
+    - report1.txt
+    - report2.txt
+    - ...
+ - Main.py
+ - Manual.txt
+ - Инструкция.txt
