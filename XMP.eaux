@@ -1,0 +1,229 @@
+<I>
+{Images:<name>,<filename>}
+S,stone.png
+N,no_stone.png
+</I>
+<D>
+{Database:<filename>}
+</D>
+<B>
+{Board:x,y}
+800,600
+{Cells:<name>,x1,y1,x2,y2}
+nw,130,30,309,209
+n,310,30,489,209
+ne,490,30,669,209
+w,130,210,309,389
+c,310,210,489,389
+e,490,210,669,389
+sw,130,390,309,569
+s,310,390,489,569
+se,490,390,669,569
+</B>
+<M>
+{Main}
+v[all] :: n[0]
+@ n[1]:
+v[nw] :: r[0,1]
+v[n] :: r[0,1]
+v[ne] :: r[0,1]
+v[w] :: r[0,1]
+v[c] :: r[0,1]
+v[e] :: r[0,1]
+v[sw] :: r[0,1]
+v[s] :: r[0,1]
+v[se] :: r[0,1]
+v[all] :: (v[nw] + v[n] + v[ne] + v[w] + v[c] + v[e] + v[sw] + v[s] + v[se])
+? (v[all] = n[9]) | (v[all] = n[0]): $;
+! #.
+.
+? v[nw] = n[1]: c[nw] :: i[S];
+! c[nw] :: i[N].
+? v[n] = n[1]: c[n] :: i[S];
+! c[n] :: i[N].
+? v[ne] = n[1]: c[ne] :: i[S];
+! c[ne] :: i[N].
+? v[w] = n[1]: c[w] :: i[S];
+! c[w] :: i[N].
+? v[c] = n[1]: c[c] :: i[S];
+! c[c] :: i[N].
+? v[e] = n[1]: c[e] :: i[S];
+! c[e] :: i[N].
+? v[sw] = n[1]: c[sw] :: i[S];
+! c[sw] :: i[N].
+? v[s] = n[1]: c[s] :: i[S];
+! c[s] :: i[N].
+? v[se] = n[1]: c[se] :: i[S];
+! c[se] :: i[N].
+</M>
+<E>
+{Events:>>><event_name>:}
+{_______<code>__________}
+{_______<<<_____________}
+>>>nw:
+? v[nw] = n[1]:
+v[nw] :: n[0]
+c[nw] :: i[N]
+v[all] -: n[1];
+!
+v[nw] :: n[1]
+c[nw] :: i[S]
+v[all] +: n[1].
+<<<
+>>>n:
+? v[n] = n[1]:
+v[n] :: n[0]
+c[n] :: i[N]
+v[all] -: n[1];
+!
+v[n] :: n[1]
+c[n] :: i[S]
+v[all] +: n[1].
+<<<
+>>>ne:
+? v[ne] = n[1]:
+v[ne] :: n[0]
+c[ne] :: i[N]
+v[all] -: n[1];
+!
+v[ne] :: n[1]
+c[ne] :: i[S]
+v[all] +: n[1].
+<<<
+>>>w:
+? v[w] = n[1]:
+v[w] :: n[0]
+c[w] :: i[N]
+v[all] -: n[1];
+!
+v[w] :: n[1]
+c[w] :: i[S]
+v[all] +: n[1].
+<<<
+>>>c:
+? v[c] = n[1]:
+v[c] :: n[0]
+c[c] :: i[N]
+v[all] -: n[1];
+!
+v[c] :: n[1]
+c[c] :: i[S]
+v[all] +: n[1].
+<<<
+>>>e:
+? v[e] = n[1]:
+v[e] :: n[0]
+c[e] :: i[N]
+v[all] -: n[1];
+!
+v[e] :: n[1]
+c[e] :: i[S]
+v[all] +: n[1].
+<<<
+>>>sw:
+? v[sw] = n[1]:
+v[sw] :: n[0]
+c[sw] :: i[N]
+v[all] -: n[1];
+!
+v[sw] :: n[1]
+c[sw] :: i[S]
+v[all] +: n[1].
+<<<
+>>>s:
+? v[s] = n[1]:
+v[s] :: n[0]
+c[s] :: i[N]
+v[all] -: n[1];
+!
+v[s] :: n[1]
+c[s] :: i[S]
+v[all] +: n[1].
+<<<
+>>>se:
+? v[se] = n[1]:
+v[se] :: n[0]
+c[se] :: i[N]
+v[all] -: n[1];
+!
+v[se] :: n[1]
+c[se] :: i[S]
+v[all] +: n[1].
+<<<
+>>>end:
+? v[all] = n[9]: <Q>.
+<<<
+</E>
+<C>
+{With cell:}
+{Control:<button>,<cell>,<event_name>}
+{Without cell:}
+{Control:<button>,<event_name>}
+1,nw
+1,n
+1,w
+2,nw
+2,n
+2,ne
+2,c
+3,n
+3,ne
+3,e
+4,nw
+4,w
+4,c
+4,sw
+5,n
+5,w
+5,c
+5,e
+5,s
+6,ne
+6,c
+6,e
+6,se
+7,w
+7,sw
+7,s
+8,c
+8,sw
+8,s
+8,se
+9,e
+9,s
+9,se
+<,nw,nw
+<,nw,n
+<,nw,w
+<,n,nw
+<,n,n
+<,n,ne
+<,n,c
+<,ne,n
+<,ne,ne
+<,ne,e
+<,w,nw
+<,w,w
+<,w,c
+<,w,sw
+<,c,n
+<,c,w
+<,c,c
+<,c,e
+<,c,s
+<,e,ne
+<,e,c
+<,e,e
+<,e,se
+<,sw,w
+<,sw,sw
+<,sw,s
+<,s,c
+<,s,sw
+<,s,s
+<,s,se
+<,se,e
+<,se,s
+<,se,se
+0,end
+</C>
